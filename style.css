@@ -257,9 +257,9 @@ body {
         box-sizing: border-box;
         z-index: 1;
 
-        height: 75px;
         left: 0;
         bottom: 0;
+        padding-bottom: 35px;
         justify-content: left;
 
         filter: none;
