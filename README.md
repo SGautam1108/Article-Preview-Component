@@ -29,9 +29,9 @@ My users should be able to:
 
 ### Screenshot
 
-![](images/Screenshot_1.jpg)
-![](images/Screenshot_2.jpg)
-![](images/Screenshot_3.jpg)
+![](images/Screenshot_1.png)
+![](images/Screenshot_2.png)
+![](images/Screenshot_3.png)
 
 
 ### Links
