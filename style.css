@@ -1,0 +1,277 @@
+:root {
+    --very-dark-blue: hsl(214, 63%, 20%);
+    --dark-grey-blue: hsl(217, 19%, 35%);
+    --dark-blue: hsl(214, 17%, 51%);
+    --grey-blue: hsl(212, 23%, 69%);
+    --light-grey-blue: hsl(210, 46%, 95%);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    height: 100vh;
+    position: relative;
+    background: var(--light-grey-blue);
+    margin: 0;
+
+    font-family: 'Manrope', sans-serif;
+
+    display: grid;
+    place-items: center;
+}
+
+
+/* Main */
+#main {
+    position: relative;
+    width: 750px;
+    height: 300px;
+    display: flex;
+}
+
+/* Article Image */
+
+.article-img {
+    flex: 4.5;
+    background-image: url("images/drawers.jpg");
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: cover;
+
+    border-radius: 10px 0 0 10px;
+}
+
+/* Article right side */
+
+.article-body {
+    background: white;
+    border-radius: 0 10px 10px 0;
+    padding: 40px;
+    flex: 5.5;
+    font-size: 13px;
+}
+
+/* Article text */
+
+.article-text {
+    text-align: left;
+}
+
+.article-title {
+    margin: 0;
+    font-size: 1.3rem;
+    color: var(--dark-grey-blue);
+    font-weight: 700;
+}
+
+.article-para {
+    color: var(--dark-blue);
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+
+/* Article Author and share*/
+
+.article-links {
+    margin-top: 2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Social Media Overlay */
+
+.article-share-social {
+    visibility: hidden;
+
+    position: absolute;
+    right: -75px;
+    padding: 20px 30px;
+    border-radius: 10px;
+    background: var(--dark-grey-blue);
+    color: var(--grey-blue);
+    filter: drop-shadow(0 10px 5px var(--grey-blue));
+    transition: all 0.5s;
+
+    opacity: 0;
+    transform: translateY(-120%);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.article-share-social:after {
+    /* Triangle for pop up */
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 100%);
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-top-color: var(--dark-grey-blue);
+    border-bottom: 0;
+}
+
+.share-social-active {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(-150%);
+}
+
+.share-title {
+    /* flex: 1; */
+    margin: 0;
+    margin-right: 10px;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    font-weight: 400;
+    font-size: 0.8rem;
+}
+
+.social-icon-container {
+    margin-inline: 10px;
+}
+
+.social-icon {
+    height: 20px;
+    width: 20px;
+}
+
+
+/* Author */
+
+.article-author {
+    display: flex;
+    align-items: center;
+}
+
+.article-author-avatar {
+    margin-right: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+}
+
+.article-author-details {
+    line-height: 1.5;
+}
+
+.article-author-name {
+    color: var(--dark-grey-blue);
+    font-weight: 700;
+    font-size: 0.85rem;
+    margin: 0;
+
+}
+
+.article-date {
+    color: var(--grey-blue);
+    margin: 0;
+}
+
+/* Share button */
+.share-button {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    background-color: var(--light-grey-blue);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+    z-index: 10;
+}
+
+.share-button:hover {
+    background-color: var(--dark-blue);
+}
+
+.share-button:hover img {
+    filter: brightness(100);
+}
+
+
+/* Attribution */
+#attribution {
+    background-color: var(--very-dark-blue);
+    color: var(--grey-blue);
+
+    text-align: center;
+    width: 100%;
+    padding: 30px;
+    position: absolute;
+    bottom: -30%;
+}
+
+#attribution p {
+    margin: 0.5em;
+}
+
+#attribution p a {
+    color: inherit;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+
+/* Media Queries for mobile */
+
+@media (max-width: 842px) {
+
+    #main {
+        max-width: 360px;
+        height: 550px;
+        flex-direction: column;
+    }
+
+    .article-img {
+        background-position: center;
+        border-radius: 10px 10px 0 0;
+    }
+
+    .article-body {
+        border-radius: 0 0 10px 10px;
+        padding-bottom: 20px;
+    }
+
+    .article-title {
+        font-size: 1.1rem;
+    }
+
+    .article-para{
+        font-size: 0.9rem;
+    }
+
+    .article-share-social {
+        width: 100%;
+
+        box-sizing: border-box;
+        z-index: 1;
+
+        height: 75px;
+        left: 0;
+        bottom: 0;
+        justify-content: left;
+
+        filter: none;
+        transform: none;
+        border-radius: 0 0 10px 10px;
+    }
+
+    .article-share-social:after {
+        display: none;
+    }
+
+    .share-social-active {
+        transform: none;
+    }
+}
